@@ -1,0 +1,13 @@
+.cart {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: red;
+  width: 200px;
+  height: 500px;
+  z-index: 555;
+}
+
+.cart-none {
+  display: none;
+}
