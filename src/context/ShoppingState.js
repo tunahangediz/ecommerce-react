@@ -7,17 +7,18 @@ function ShoppingState({ children }) {
   const initialState = {
     products: [],
     cart: [],
-    loading: true,
   };
 
   const [state, dispatch] = useReducer(shoppingReducer, initialState);
   const categories = [...new Set(state.products.map((item) => item.category))];
   const [cartOpen, setCartOpen] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   const getProducts = (api) => {
-    fetch(api)
+    fetch(api, { mode: "cors" })
       .then((response) => {
         // Hata verirse uygulamanın çökmemesi için response kontorlü yapılmalı
+        setLoading(true);
         if (!response.ok) {
           throw Error("Data not fetched");
         }
@@ -26,10 +27,12 @@ function ShoppingState({ children }) {
       .then((data) => {
         dispatch({ type: SET_PRODUCTS, payload: data });
         // dispatch({ type: SET_LOADING, payload: false });
+        setLoading(false);
       })
       .catch((err) => {
         // dispatch({ type: SET_LOADING, payload: true });
         console.error(err);
+        setLoading(false);
       });
   };
 
@@ -84,7 +87,7 @@ function ShoppingState({ children }) {
       value={{
         products: state.products,
         cart: state.cart,
-        loading: state.loading,
+        loading: loading,
         categories: categories,
         addProductToCart,
         cartOpen,

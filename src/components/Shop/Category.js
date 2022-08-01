@@ -11,12 +11,12 @@ function Category() {
     (product) => product.category == category
   );
   return (
-    <div>
-      <h1>{category}</h1>
+    <nav>
+      {/* <h1>{category}</h1> */}
       <div>
         <ProductLayout products={filteredCategoryItems} />
       </div>
-    </div>
+    </nav>
   );
 }
 

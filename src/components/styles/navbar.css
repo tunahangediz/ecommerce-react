@@ -1,12 +1,13 @@
+@import url("https://css.gg/shopping-bag.css");
 .navbar {
   display: flex;
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 4rem;
+  padding: 1rem 0;
 }
 .navbar h1 {
-  font-size: 3rem;
+  font-size: clamp(1.8rem, 2.5vw, 3rem);
   padding: 0;
   margin: 0;
 }
@@ -14,13 +15,13 @@
 .navbar-nav {
   display: flex;
   justify-content: space-between;
-  gap: 4rem;
+  gap: 2rem;
   font-size: 1.4rem;
   font-weight: 500;
 }
 
 .nav-shop {
-  padding: 1rem;
+  padding: 0.7rem;
 }
 .nav-shop:hover {
   background-color: black;
@@ -29,4 +30,38 @@
 .nav-shop-active {
   background-color: black;
   color: white;
+}
+.cart-btn {
+  all: unset;
+  font-size: 1rem;
+  position: relative;
+  /* background-color: black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+}
+.cart-btn p {
+  position: absolute;
+  z-index: 5;
+  color: red;
+  position: absolute;
+  bottom: 0.7rem;
+}
+.bag-outline {
+  position: absolute;
+}
+
+ion-icon {
+  font-size: 2.5rem;
+  --ionicon-stroke-width: 1.3rem;
+}
+@media screen and (min-width: 40rem) {
+  .navbar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4rem;
+  }
 }

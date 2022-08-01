@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import shoppingContext from "../context/shoppingContex";
 import "./styles/navbar.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Navbar() {
   const { cart, setCartOpen, cartOpen } = useContext(shoppingContext);
@@ -20,8 +21,9 @@ function Navbar() {
         >
           SHOP
         </NavLink>
-        <button onClick={() => setCartOpen(!cartOpen)}>
-          CART <strong> {cart.length} </strong>{" "}
+        <button className="cart-btn" onClick={() => setCartOpen(!cartOpen)}>
+          <ion-icon name="bag-outline"></ion-icon>
+          <p> {cart.length} </p>
         </button>
       </div>
     </nav>

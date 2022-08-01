@@ -10,7 +10,7 @@ function Home() {
   products.forEach((p) => console.log(p.category));
 
   return (
-    <div>
+    <div className="home">
       <CategoryGrid />
     </div>
   );
