@@ -15,17 +15,19 @@ function CartRow({ product }) {
       deleteProduct(product);
     }
   };
+
+  const price = (product.amount * product.price).toFixed(2);
   return (
-    <div style={{ display: "flex" }}>
-      <img
-        style={{ maxWidth: "100px", width: "100%" }}
-        src={product.image}
-        alt=""
-      />
-      <div>
-        <button onClick={handleDecrement}>-</button>
-        <div>{product.amount}</div>
-        <button onClick={handleIncrement}>+</button>
+    <div className="cart-row">
+      <img src={product.image} alt="" />
+      <div className="row-info">
+        <div className="row-title">{product.title}</div>
+        <div>${price}</div>
+        <div className="cart-row-count">
+          <button onClick={handleDecrement}>-</button>
+          <div>{product.amount}</div>
+          <button onClick={handleIncrement}>+</button>
+        </div>
       </div>
     </div>
   );

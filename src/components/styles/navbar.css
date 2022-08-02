@@ -5,6 +5,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0;
+  /* position: fixed; */
 }
 .navbar h1 {
   font-size: clamp(1.8rem, 2.5vw, 3rem);
