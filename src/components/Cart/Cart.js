@@ -7,6 +7,10 @@ function Cart() {
   const classNameCart = !cartOpen ? "cart-go-in-right " : "";
   const classNameOuter = !cartOpen ? "cart-go-in-left " : "";
   const products = cart.map((product) => <CartRow product={product} />);
+  let total = 0;
+  cart.forEach((product) => {
+    total += Number((product.amount * product.price).toFixed(2));
+  });
   return (
     <>
       <div
@@ -28,6 +32,9 @@ function Cart() {
         </button>
         <div className="product-div">
           {products.length > 0 ? products : "Cart Empty"}
+        </div>
+        <div>
+          <h4>Total: ${total}</h4>
         </div>
       </div>
     </>
