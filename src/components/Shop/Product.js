@@ -9,18 +9,18 @@ function Product({ product }) {
     addProductToCart(product);
   };
   return (
-    // <Link to="/">
-    <div className="product-card">
-      <div className="product-img">
-        <img src={product.image} alt="" />
+    <Link to={`/shop/product/${product.id}`}>
+      <div className="product-card">
+        <div className="product-img">
+          <img src={product.image} alt="" />
+        </div>
+        <div className="product-info">
+          <h3>{product.title}</h3>
+          <p>{product.price}</p>
+          <button onClick={handleClick}>Add to Cart</button>
+        </div>
       </div>
-      <div className="product-info">
-        <h3>{product.title}</h3>
-        <p>{product.price}</p>
-        <button onClick={handleClick}>Add to Cart</button>
-      </div>
-    </div>
-    // </Link>
+    </Link>
   );
 }
 

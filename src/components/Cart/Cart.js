@@ -6,7 +6,9 @@ function Cart() {
   const { cart, cartOpen, setCartOpen } = useContext(shoppingContext);
   const classNameCart = !cartOpen ? "cart-go-in-right " : "";
   const classNameOuter = !cartOpen ? "cart-go-in-left " : "";
-  const products = cart.map((product) => <CartRow product={product} />);
+  const products = cart.map((product) => (
+    <CartRow key={product.id} product={product} />
+  ));
   let total = 0;
   cart.forEach((product) => {
     total += Number((product.amount * product.price).toFixed(2));
@@ -34,7 +36,7 @@ function Cart() {
           {products.length > 0 ? products : "Cart Empty"}
         </div>
         <div>
-          <h4>Total: ${total}</h4>
+          <h4 style={{ paddingTop: "1rem" }}>Total: ${total.toFixed(2)}</h4>
         </div>
       </div>
     </>

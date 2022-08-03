@@ -10,6 +10,10 @@
   padding-bottom: 1rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;
   border-radius: 0.4rem;
+  transition: all 0.4s;
+}
+.product-card:hover {
+  transform: scale(1.1);
 }
 .product-card .product-img {
   width: 100%;

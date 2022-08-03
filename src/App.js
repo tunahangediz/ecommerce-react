@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Cart from "./components/Cart/Cart";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
+import ProductDetails from "./components/productDetails/ProductDetails";
 import Category from "./components/Shop/Category";
 import Product from "./components/Shop/Product";
 import Shop from "./components/Shop/Shop";
@@ -20,6 +22,7 @@ function App() {
           <Route path="shop" element={<ShopLayout />}>
             <Route index={true} element={<Shop />} />
             <Route path=":category" element={<Category />} />
+            <Route path="product/:id" element={<ProductDetails />} />
           </Route>
         </Routes>
       </div>
