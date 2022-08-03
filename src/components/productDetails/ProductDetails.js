@@ -14,7 +14,6 @@ function ProductDetails() {
     incrementProduct,
     addProductToCart,
   } = useContext(shoppingContext);
-  console.log(id);
 
   const product = products.filter((p) => p.id === +id);
   const productInCart = cart.filter((p) => p.id === +id);
